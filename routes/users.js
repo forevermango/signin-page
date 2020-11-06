@@ -10,3 +10,13 @@ router.get('/register',(req,res)=>{
     res.render('register')
 })
 //Register handle 
+//handles the POST requests
+router.post('/resister',(req,res) => {
+})
+router.post('/login',(req,res,next) => {
+})
+
+//logout
+router.get('/logout',(req,res)=>{
+})
+module.exports = router;
