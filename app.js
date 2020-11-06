@@ -7,9 +7,10 @@ const expressEjsLayout = require('express-ejs-layouts')
 const flash = require('connect-flash');
 const session = require('express-session');
 //mongoose
-mongoose.connect('mongodb://localhost/test',{useNewUrlParser: true, useUnifiedTopology : true})
-.then(() => console.log('connected,,'))
-.catch((err)=> console.log(err));
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/'+ `YOUR DATABASE NAME`;
+
+// Connect to Mongo
+mongoose.connect(MONGODB_URI ,  { useNewUrlParser: true});
 
 //EJS
 app.set('view engine','ejs');
