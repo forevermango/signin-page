@@ -2,6 +2,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const router = express.Router();
+const bodyParser = require("body-parser");
 const app = express();
 const expressEjsLayout = require('express-ejs-layouts')
 const flash = require('connect-flash');
@@ -32,7 +33,22 @@ app.use(session({
      res.locals.error  = req.flash('error');
    next(); 
    }) 
-   
+   app.use(bodyParser.urlencoded({ extended: true }));
+   app.set("view engine", "ejs");
+
+//placeholders for added task
+const task = ["buy socks", "get money"];
+//placeholders for removed task
+const complete = ["finish jquery"];
+
+//post route for adding new task 
+app.post("/addtask", function(req, res) {
+    var newTask = req.body.newtask;
+    //add the new task from the post route
+    task.push(newTask);
+    res.redirect("/");
+});
+
 //Routes
 app.use('/',require('./routes/index'));
 app.use('/users',require('./routes/users'));
