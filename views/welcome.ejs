@@ -4,57 +4,34 @@
 			height: 100%;
 			margin: 0;
 			background: rgb(2,0,36);
-            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(149,199,20,1) 0%, rgba(0,212,255,1) 96%);
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(202, 112, 202) 0%, rgba(0,212,255,1) 96%);
 		
-		}
-   
-   .myForm{
-   	background-color: rgba(0,0,0,0.5) !important;
-   	padding: 15px !important;
-   border-radius: 15px !important;
-   color: white;
-   
-   }
+        }
 
-   input{
-   	border-radius:0 15px 15px 0 !important;
 
-   }
-   input:focus{
-       outline: none;
-box-shadow:none !important;
-border:1px solid #ccc !important;
+            .child {
+                width: 50px;
+                height: 50px;
+                /* Center vertically and horizontally */
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin: -25px 0 0 -25px; /* apply negative top and left margins to truly center the element */
+            }
+</style>        
+<body>
+	<div class="container">
+        <div class="child">
+            <h1>Welcome!</h1>
+            <p>Create an account or login</p>
+            <button>
+                <a href="/users/register">Register</a>
+            </button>
+            <button>
+                <a href="/users/login"> Login</a>
+            </button>
+        </div>
+	</div>
 
-   }
-
-   .br-15{
-   	border-radius: 15px 0 0 15px !important;
-   }
-
-   #add_more{
-   	color: white !important;
-   	background-color: #fa8231 !important;
-   	border-radius: 15px !important;
-   	border: 0 !important;
-
-   }
-   #remove_more{
-   	color: white !important;
-   	background-color: #fc5c65 !important;
-   	border-radius: 15px !important;
-   	border: 0 !important;
-   	display: none;
-
-   }
-   	
-   .submit_btn{
-   	border-radius: 15px !important;
-    background-color: #95c714 !important;
-    border: 0 !important;
-   }
-        </style>        
-<h1>Welcome!</h1>
-<p>Create an account or login</p>
-<a href="/users/register">Register</a>
-<a href="/users/login"> Login</a>
+</body>
 </html>
