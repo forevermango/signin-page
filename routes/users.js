@@ -42,7 +42,7 @@ router.post('/login',(req,res)=>{
        User.findOne({email : email}).exec((err,user)=>{
         console.log(user);   
         if(user) {
-            errors.push({msg: 'email already registered'});
+            errors.push({msg: 'this email already registered'});
             res.render('register',{errors,name,email,password,password2})  
            } else {
             const newUser = new User({
@@ -62,7 +62,7 @@ router.post('/login',(req,res)=>{
                     newUser.save()
                     .then((value)=>{
                         console.log(value)
-                        req.flash('success_msg','You have now registered!')
+                        req.flash('success_msg','Welcome, you are all in"!')
                     res.redirect('/users/login');
                     })
                     .catch(value=> console.log(value));
